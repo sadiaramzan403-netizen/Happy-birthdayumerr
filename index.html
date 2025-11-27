@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Happy Birthday My Batman!</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
+
+body {
+  margin:0; padding:0;
+  font-family:'Playfair Display', serif;
+  background: linear-gradient(120deg, #f7e6e3, #fff1dc, #ffe4e1);
+  overflow:hidden;
+  text-align:center;
+}
+
+/* Confetti */
+.confetti {position:absolute; width:6px; height:6px; border-radius:50%; opacity:0.9;
+  animation: drop 5s linear infinite, sway 2s ease-in-out infinite alternate;}
+@keyframes drop {0%{transform:translateY(0);}100%{transform:translateY(800px);}}
+@keyframes sway {0%{transform:translateX(0);}100%{transform:translateX(30px);}}
+
+/* Balloons */
+.balloon {position:absolute;width:30px;height:45px;border-radius:50%;opacity:0.85;animation: floatUp linear infinite;}
+@keyframes floatUp {0%{transform:translateY(800px);}100%{transform:translateY(-100px);}}
+
+/* Sparkles */
+.sparkle {position:absolute;width:4px;height:4px;border-radius:50%;background:white;opacity:0.8;animation: sparkleAnim 2s linear infinite alternate;}
+@keyframes sparkleAnim {0%{transform:translateY(0) scale(1);}50%{transform:translateY(-20px) scale(1.5);}100%{transform:translateY(0) scale(1);}}
+
+/* Container */
+.container{position:relative; z-index:1; padding-top:120px;}
+h1{font-size:3em;color:#222;text-shadow:2px 2px #f2c94c;margin-bottom:20px;animation: textGlow 2s ease-in-out infinite alternate;}
+@keyframes textGlow {0%{text-shadow:2px 2px #f2c94c;}50%{text-shadow:2px 2px #ffd700;}100%{text-shadow:2px 2px #f2c94c;}}
+
+/* Countdown */
+#countdown{font-size:2em;margin:10px 0 30px;color:#444;font-weight:bold;}
+
+/* Cake Image */
+.cake-container {width:250px;margin:0 auto 30px; animation:bounce 2s ease-in-out infinite;}
+@keyframes bounce {0%,100%{transform:translateY(0);}50%{transform:translateY(-15px);}}
+
+/* Button */
+button{padding:16px 32px;font-size:1.2em;border:none;border-radius:12px;background:#f2c94c;color:#000;cursor:pointer;transition:0.3s;margin-bottom:50px;}
+button:hover{background:#e6b800;}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Happy 22nd Birthday My Batman!</h1>
+
+  <!-- Cake Image -->
+  <div class=.cake-container {width:250px;margin:0 auto 30px; animation:bounce 2s ease-in-out infinite;}
+@keyframes bounce {0%,100%{transform:translateY(0);}50%{transform:translateY(-15px);}}
+    <img src="cake.png" alt="Birthday Cake" style="width:100%; border-radius:15px; box-shadow:0 0 25px rgba(0,0,0,0.2);">
+  </div>
+
+  <div id="countdown"></div>
+  <button onclick="location.href='page2.html'">Open Surprise Box</button>
+</div>
+
+<script>
+// Confetti
+const confettiColors = ['#f2c94c','#ffb6b9','#6bc1ff','#ff9f43','#d5a6bd'];
+for(let i=0;i<60;i++){
+  let c=document.createElement('div'); c.className='confetti';
+  c.style.background=confettiColors[Math.floor(Math.random()*confettiColors.length)];
+  c.style.left=Math.random()*window.innerWidth+'px';
+  c.style.width=c.style.height=(4+Math.random()*4)+'px';
+  c.style.animationDelay=(Math.random()*5)+'s';
+  document.body.appendChild(c);
+}
+
+// Balloons
+for(let i=0;i<8;i++){
+  let b=document.createElement('div'); b.className='balloon';
+  const balloonColors=['#ffb6b9','#6bc1ff','#f2c94c','#ff9f43','#d5a6bd'];
+  b.style.background=balloonColors[Math.floor(Math.random()*balloonColors.length)];
+  b.style.left=Math.random()*window.innerWidth+'px';
+  b.style.animationDuration=(6+Math.random()*4)+'s';
+  document.body.appendChild(b);
+}
+
+// Sparkles
+for(let i=0;i<50;i++){
+  let s=document.createElement('div'); s.className='sparkle';
+  s.style.left=Math.random()*window.innerWidth+'px';
+  s.style.top=(Math.random()*500+50)+'px';
+  s.style.width=s.style.height=(2+Math.random()*3)+'px';
+  s.style.animationDuration=(1+Math.random()*1)+'s';
+  document.body.appendChild(s);
+}
+
+// Countdown
+const targetDate = new Date('November 28, 2025 00:00:00').getTime();
+const countdown = document.getElementById('countdown');
+function updateCountdown(){
+  const now = new Date().getTime();
+  const d = targetDate - now;
+  if(d<0){countdown.innerHTML="🎉 Today is the Day! 🎉"; return;}
+  const days=Math.floor(d/(1000*60*60*24));
+  const hours=Math.floor((d%(1000*60*60*24))/(1000*60*60));
+  const mins=Math.floor((d%(1000*60*60))/(1000*60));
+  const secs=Math.floor((d%(1000*60))/1000);
+  countdown.innerHTML=`${days}d ${hours}h ${mins}m ${secs}s`;
+}
+setInterval(updateCountdown,1000);
+updateCountdown();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>100 Reasons I Love You</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+
+body{
+  margin:0;padding:20px;font-family:'Playfair Display', serif;
+  background:#fff; color:#333;overflow-x:hidden;
+}
+
+h1{text-align:center;font-size:2.5em;margin-bottom:25px; color:#222;}
+
+.reason{
+  font-size:1.2em;margin:10px 0;padding:10px;
+  border-bottom:1px solid #eee;
+}
+
+button{
+  padding:16px 32px;font-size:1.1em;border:none;border-radius:10px;
+  background:#f2c94c;color:#000;cursor:pointer;transition:0.3s;margin-top:30px;display:block;margin:auto;
+}
+button:hover{background:#e6b800;}
+</style>
+</head>
+<body>
+
+<h1>100 Reasons I Love You ❤️💛</h1>
+
+<div id="reasons-container"></div>
+
+<button onclick="location.href='page3.html'">Read My Love Letter ✉️</button>
+
+<script>
+const reasons = [
+"1. You make me smile 😄",
+"2. Your voice is my favorite 🎵",
+"3. You make simple days special 🌸",
+"4. Your hugs feel like home 🏠",
+"5. You understand me without words 🤗",
+"6. You always lift me up 💖",
+"7. Your laugh is contagious 😂",
+"8. You believe in me 💫",
+"9. You are my peace 🕊️",
+"10. You make ordinary moments magical ✨",
+"11. Your eyes sparkle with mischief 😉",
+"12. You are my Batman 🦇",
+"13. You accept my chaos 😅",
+"14. You inspire me to be better 🌟",
+"15. Your heart is huge 💛",
+"16. You make me feel safe 🛡️",
+"17. You are generous 🎁",
+"18. You are thoughtful 📝",
+"19. You make me laugh until I cry 😭😂",
+"20. You are simply amazing 🌈",
+"21. Your smile brightens my day ☀️",
+"22. You know me better than anyone 👀",
+"23. You are my favorite hello and hardest goodbye 🥰",
+"24. You are kind and gentle 🌷",
+"25. You always keep your promises 🤝",
+"26. You have the best ideas 💡",
+"27. You are my comfort zone 🛋️",
+"28. You make challenges easier 🏔️",
+"29. You are thoughtful with surprises 🎉",
+"30. You make everything fun 🎈",
+"31. You are loyal ❤️",
+"32. You protect me 🛡️",
+"33. You understand my quirks 🤪",
+"34. You love without conditions 💖",
+"35. You are patient ⏳",
+"36. You are adventurous 🌍",
+"37. You are my inspiration 🌟",
+"38. You make me proud 🏆",
+"39. You are reliable 📌",
+"40. You are supportive 🤗",
+"41. You are honest 📝",
+"42. You are my sunshine 🌞",
+"43. You make every moment count ⏰",
+"44. You love deeply ❤️",
+"45. You are respectful 🤝",
+"46. You are funny 😆",
+"47. You are smart 🧠",
+"48. You are charming 😍",
+"49. You are humble 🌿",
+"50. You are caring 💛",
+"51. You believe in us 💑",
+"52. You make me feel special 🌸",
+"53. You are my safe place 🏡",
+"54. You are reliable 📌",
+"55. You are romantic 💌",
+"56. You make ordinary things beautiful 🌹",
+"57. You are attentive 👀",
+"58. You love my chaos 😅",
+"59. You make life colorful 🎨",
+"60. You are my everything 💖",
+"61. You are generous with love 💛",
+"62. You are supportive in dreams 🌟",
+"63. You are affectionate 🥰",
+"64. You are my best friend 🤗",
+"65. You are playful 😜",
+"66. You encourage me 💪",
+"67. You are my laughter 😄",
+"68. You love me truly ❤️",
+"69. You are thoughtful with details ✨",
+"70. You make me feel confident 💃",
+"71. You make me feel beautiful 🌸",
+"72. You are attentive to feelings 🥹",
+"73. You are courageous 🦸",
+"74. You are my partner in crime 🦇",
+"75. You make surprises special 🎁",
+"76. You make every day better 🌞",
+"77. You are creative 🎨",
+"78. You are inspiring 🌟",
+"79. You are understanding 🤝",
+"80. You love unconditionally ❤️",
+"81. You are my motivation 💪",
+"82. You make me feel alive 🌷",
+"83. You are adventurous 🗺️",
+"84. You are passionate 🔥",
+"85. You are empathetic 🤗",
+"86. You are a great listener 👂",
+"87. You are dependable 📌",
+"88. You are my favorite person 🌸",
+"89. You make me feel complete 💖",
+"90. You are my calm in storms 🌊",
+"91. You love with heart and soul ❤️",
+"92. You are gentle 🌿",
+"93. You are my partner forever 💑",
+"94. You make me laugh endlessly 😂",
+"95. You are thoughtful and kind 🌷",
+"96. You make dreams possible 🌟",
+"97. You are my inspiration daily 💛",
+"98. You love me fully 🥰",
+"99. You make everything brighter 🌞",
+"100. You are my everything 💖🦇"
+];
+
+const container=document.getElementById('reasons-container');
+reasons.forEach(r=>{
+  const div=document.createElement('div');
+  div.className='reason';
+  div.innerText=r;
+  container.appendChild(div);
+});
+</script>
+
+</body>
+</html>
